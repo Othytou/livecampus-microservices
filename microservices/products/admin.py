@@ -1,3 +1,11 @@
 from django.contrib import admin
+from import_export.admin import ImportExportModelAdmin
 
-# Register your models here.
+from .models import Products
+
+
+class ProductAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+	pass
+
+
+admin.site.register(Products, ProductAdmin)
