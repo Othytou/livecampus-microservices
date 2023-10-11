@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Products
+from django.core.cache import cache
+
 
 
 def product_list(request):
@@ -23,4 +25,3 @@ def product_update(request, product_id):
 def product_delete(request, product_id):
 	product = Products.objects.delete(pk=product_id)
 	return render(request, 'productss/product_delete.html')
-
